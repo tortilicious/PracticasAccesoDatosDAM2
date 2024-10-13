@@ -112,12 +112,11 @@ public class Menu {
             }
         }
 
-        // en caso de que no se encuentre un ocche con la id proporcionada
+        // en caso de que no se encuentre un coche con la id proporcionada
         System.out.println("No se ha encontrado el coche con esa 'id'");
     }
 
     public void listadoCoches (ArrayList<Coche> listaCoches) {
-
         // comprobamos que la lista no este vacía
         if (listaCoches.isEmpty()) {
             System.out.println("Todavía no se ha añadido ningún coche en la lista");

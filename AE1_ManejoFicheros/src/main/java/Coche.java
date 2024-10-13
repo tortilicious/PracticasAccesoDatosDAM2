@@ -1,66 +1,24 @@
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Coche {
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 
-    private String marca;
-    private String modelo;
-    private String color;
+public class Coche implements Serializable {
+
+    // Atributo para definir la serialización del objeto
+    private static final long serialVersionUID = 1L;
+    private String marca, modelo, color, matricula;
     private int id;
-    private String matricula;
-
-    public Coche() {
-    }
-
-    public Coche(String marca, String modelo, String color, int id, String matricula) {
-        this.marca = marca;
-        this.modelo = modelo;
-        this.color = color;
-        this.id = id;
-        this.matricula = matricula;
-    }
-
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    public String getModelo() {
-        return modelo;
-    }
-
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getMatricula() {
-        return matricula;
-    }
-
-    public void setMatricula(String matricula) {
-        this.matricula = matricula;
-    }
 
     // Aseguramos la identidad de los objetos coche tanto por la "matricula" como por el "id"
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -73,6 +31,7 @@ public class Coche {
         return Objects.hash(id, matricula);
     }
 
+    // Modificamos el formato del metodo toString
     @Override
     public String toString() {
         return String.format("""
