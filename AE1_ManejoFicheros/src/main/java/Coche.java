@@ -18,6 +18,7 @@ public class Coche implements Serializable {
     private String marca, modelo, color, matricula;
     private int id;
 
+
     // Aseguramos la identidad de los objetos coche tanto por la "matricula" como por el "id"
     @Override
     public boolean equals(Object o) {
@@ -31,16 +32,16 @@ public class Coche implements Serializable {
         return Objects.hash(id, matricula);
     }
 
-    // Modificamos el formato del metodo toString
+    // Modificamos el formato del método toString
     @Override
     public String toString() {
         return String.format("""
                 Coche:
-                    Marca: $s
-                    Modelo: $s
-                    Color: $s
-                    Id: $d
-                    Matricula: $s
+                    Marca: %s
+                    Modelo: %s
+                    Color: %s
+                    Id: %d
+                    Matrícula: %s
                 """, marca, modelo, color, id, matricula);
     }
 }
