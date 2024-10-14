@@ -91,7 +91,9 @@ public class Menu {
             }
         } catch (InputMismatchException e) {
             System.out.println("Error. La 'id' debe ser un número entero");
+            return;
         }
+        System.out.println("No se ha encontrado un coche con esa id");
     }
 
     public void consultaCoche (ArrayList<Coche> listaCoches) {
